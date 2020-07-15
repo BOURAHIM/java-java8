@@ -1,12 +1,12 @@
 package java8.ex01;
 
-import org.junit.Test;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 import java.util.Calendar;
 import java.util.Date;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import org.junit.Test;
 
 /**
  * Exercice 01 - Les dates avant Java 8
@@ -19,11 +19,15 @@ public class DateAndTime_01_Test {
 
         // TODO modifier les paramètres pour que le test soit passant
         Date date = new Date(0, 0, 0, 0,0,0);
+        System.out.println(date);
 
         assertThat(date.toString(), is("Fri Mar 24 01:02:03 CET 2017"));
 
         // une date est mutable... :-(
         // TODO modifier le jour de la date pour que le test soit passant
+   
+        date.setDate(25);
+        System.out.println();
 
         assertThat(date.toString(), is("Sat Mar 25 01:02:03 CET 2017"));
     }
@@ -35,11 +39,13 @@ public class DateAndTime_01_Test {
         Calendar calendar = Calendar.getInstance();
 
         // TODO modifier l'objet calendar pour que le test soit passant
+      calendar.set(Calendar.YEAR, 24);
 
         assertThat(calendar.getTime().toString(), is("Fri Mar 24 01:02:03 CET 2017"));
 
         // calendar est mutable... :-(
         // TODO modifier l'objet calendar pour que le test soit passant
+        calendar.set(Calendar.YEAR, 25);
 
         assertThat(calendar.getTime().toString(), is("Sat Mar 25 01:02:03 CET 2017"));
     }
