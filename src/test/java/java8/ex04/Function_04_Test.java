@@ -30,7 +30,15 @@ public class Function_04_Test {
     // tag::adult[]
     // TODO Compléter la fonction
     // TODO AGE >=18
-    Predicate<Person> adult = null;
+    Predicate<Person> adult = new Predicate<Person>() {
+
+		@Override
+		public boolean test(Person t) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+    	
+    };
     // end::adult[]
 
     @Test
